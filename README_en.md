@@ -4,7 +4,7 @@
 
 <h1>Build Your Own Kernel with Github Action</h1>
 
-English | [中文](./README_cn.md)
+中文 | [English](./README_en.md)
 
 ![License](https://img.shields.io/static/v1?label=License&message=BY-NC-SA&logo=creativecommons&color=green)
 ![Language](https://img.shields.io/github/languages/top/DogDayAndroid/Android-Kernel-Builder)
