@@ -1,6 +1,6 @@
 # 构建属于你自己的内核镜像
 
-[English](./README.md) | 中文文档
+[English](./README_EN.md) | 中文文档
 
 这部分内容中，我们会利用 `Github Action` 进行内核云编译。本项目的目录结构如下：
 
