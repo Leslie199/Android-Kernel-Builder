@@ -1,4 +1,4 @@
-name: "Build KernelSU_v0.9.4"
+name: "Build KernelSU_v0.9.5"
 
 on:
   # schedule:
@@ -141,7 +141,7 @@ jobs:
             rm -rf "./drivers/kernelsu"
           fi
 
-          curl -LSs "https://raw.githubusercontent.com/tiann/KernelSU/v0.9.4/kernel/setup.sh" | bash -s main
+          curl -LSs "https://raw.githubusercontent.com/tiann/KernelSU/v0.9.5/kernel/setup.sh" | bash -s main
 
           echo -e "CONFIG_KPROBES=y" >> arch/${{ env.arch }}/configs/${{ env.DEFCONFIG_NAME }}
           echo -e "CONFIG_HAVE_KPROBES=y" >> arch/${{ env.arch }}/configs/${{ env.DEFCONFIG_NAME }}
@@ -233,6 +233,6 @@ jobs:
         uses: softprops/action-gh-release@v1
         if: ${{ env.useAnykernel == 'true' && env.release == 'true' }}
         with:
-          tag_name: KernelSU_v0.9.4-for-MIUI&NGK_Kernel_v${{ env.builddate }}.${{ github.run_number }}
+          tag_name: KernelSU_v0.9.5-for-MIUI&NGK_Kernel_v${{ env.builddate }}.${{ github.run_number }}
           files: "${{ env.WORKSPACE }}/${{ env.KERNEL_DEVICE }}-${{ env.KERNEL_NAME }}_${{ env.builddate }}.zip"
           generate_release_notes: true
