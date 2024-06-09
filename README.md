@@ -4,6 +4,8 @@
 
 <h1>构建属于你自己的安卓内核镜像</h1>
 
+中文| [English](./README_en.md)
+
 ![License](https://img.shields.io/static/v1?label=License&message=BY-NC-SA&logo=creativecommons&color=green)
 ![Language](https://img.shields.io/github/languages/top/DogDayAndroid/Android-Kernel-Builder)
 ![Issues](https://img.shields.io/github/issues/DogDayAndroid/Android-Kernel-Builder)
