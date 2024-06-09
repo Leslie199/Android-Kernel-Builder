@@ -1,6 +1,6 @@
 # Build Your Own Kernel
 
-English | [中文文档](./README.zh_CN.md)
+English | [中文文档](./README.md)
 
 In this part, we will use `Github Action` to perform kernel cloud compilation. The directory structure of this project is as follows:
 
