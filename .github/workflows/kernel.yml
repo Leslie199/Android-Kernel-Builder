@@ -1,4 +1,4 @@
-name: Build kernels
+name:  kernels
 
 on:
   push:
