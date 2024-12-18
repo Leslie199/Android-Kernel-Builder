@@ -2,7 +2,7 @@
     {
         "kernelSource": {
             "name": "Xiaomi_Kernel_OpenSource-sdm845",
-            "repo": "https://github.com/Leslie199/Lineage_dipper845_Kernel",
+            "repo": "https://github.com/LineageOS/android_kernel_xiaomi_sdm845",
             "branch": "lineage-21",
             "device": "dipper",
             "defconfig": "vendor/xiaomi/mi845_defconfig"
@@ -59,7 +59,7 @@
             "use": true,
             "release": true
         },
-        "enableKernelSU": true,
+        "enableKernelSU": false,
         "enableLXC": true
     }
 ]
