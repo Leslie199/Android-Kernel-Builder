@@ -1,0 +1,35 @@
+[
+  {
+    "kernelSource": {
+      "name": "Lineageos845Kernel",
+      "repo": "https://github.com/Leslie199/Lineage_dipper845_Kernel",
+      "branch": "lineage-21",
+      "device": "dipper",
+      "defconfig": "vendor/xiaomi/mi845_defconfig"
+    },
+    "toolchains": [
+      {
+        "name": "clang13",
+        "repo": "https://github.com/Xiaomi-sdm845-KSU/android-kernel-tools",
+        "branch": "clang13",
+        "binaryEnv": ["./bin"]
+      }
+    ],
+    "enableCcache": true,
+    "params": {
+      "ARCH": "arm64",
+      "CC": "clang",
+      "externalCommands": {
+        "CROSS_COMPILE": "proton-clang/bin/aarch64-linux-gnu-",
+        "CROSS_COMPILE_ARM32": "proton-clang/bin/arm-linux-gnueabi-",
+        "CLANG_TRIPLE": "aarch64-linux-gnu-"
+      }
+    },
+    "AnyKernel3": {
+      "use": true,
+      "release": true
+    },
+    "enableKernelSU": false,
+    "enableLXC": true
+  }
+]
