@@ -18,7 +18,7 @@ jobs:
     - uses: actions/checkout@v4
     - name: Prepare Configuration
       run: |
-        CONFIG_ENV=$(grep -w "CONFIG_ENV" Lineage21_pstar_docker_lxc.env | head -n 1 | cut -d "=" -f 2)
+        CONFIG_ENV=$(grep -w "CONFIG_ENV" Lineage21_dipper_docker_lxc.env | head -n 1 | cut -d "=" -f 2)
         CONFIG_LIST=(
             KERNEL_SOURCE
             KERNEL_SOURCE_BRANCH
