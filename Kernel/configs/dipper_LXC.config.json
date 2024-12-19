@@ -3,7 +3,7 @@
         "kernelSource": {
             "name": "Los_dipper_LXC",
             "repo": "https://github.com/LineageOS/android_kernel_xiaomi_sdm845",
-            "branch": "lineage-22.0",
+            "branch": "lineage-21",
             "device": "dipper",
             "defconfig": "vendor/xiaomi/mi845_defconfig"
         },
