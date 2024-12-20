@@ -241,8 +241,8 @@ jobs:
       run: |
         cd $GITHUB_WORKSPACE/kernel_workspace/android-kernel
         echo "------------ Patches for lxc and docker ----------------------------------------------------"
-        patch -p1 < kernel_patches/patches/${{ env.Kernel_Extra_Version }}/cgroup.patch
-        patch -p1 < kernel_patches/patches/${{ env.Kernel_Extra_Version }}/xt_qtaguid.patch
+        patch -p2 < kernel_patches/patches/${{ env.Kernel_Extra_Version }}/cgroup.patch
+        patch -p2 < kernel_patches/patches/${{ env.Kernel_Extra_Version }}/xt_qtaguid.patch
 
         echo "------------ Add Kernel Config required by lxc and docker ----------------------------------"
         # https://github.com/Leslie199/Lineage_dipper845_Kernel/blob/lineage-21/arch/arm64/configs/vendor/xiaomi/mi845_defconfig
@@ -450,7 +450,7 @@ jobs:
         scripts/config --file arch/${{ env.ARCH }}/configs/${{ env.KERNEL_CONFIG }} \
         -e CONFIG_MODULE_FORCE_LOAD \
         -d CONFIG_MODULE_SIG_FORCE
-        patch -p1 < kernel_patches/patches/${{ env.Kernel_Extra_Version }}/module.patch
+        patch -p2 < kernel_patches/patches/${{ env.Kernel_Extra_Version }}/module.patch
         #https://blog.xzr.moe/archives/236/
         #disable CONFIG_MODVERSIONS is useless
 
@@ -459,14 +459,14 @@ jobs:
       run: |
         cd $GITHUB_WORKSPACE/kernel_workspace/android-kernel
         echo "------------ Patches for backport path_umount ----------------------------------------------------"
-        patch -p1 < kernel_patches/patches/${{ env.Kernel_Extra_Version }}/path_umount_backport.patch
+        patch -p2 < kernel_patches/patches/${{ env.Kernel_Extra_Version }}/path_umount_backport.patch
 
     - name: Remove Warning
       if: env.Remove_Warning == 'true'
       run: |
         cd $GITHUB_WORKSPACE/kernel_workspace/android-kernel
         echo "------------ Patches for remove warning ----------------------------------------------------"
-        patch -p1 < kernel_patches/patches/${{ env.Kernel_Extra_Version }}/nowarnings.patch
+        patch -p2 < kernel_patches/patches/${{ env.Kernel_Extra_Version }}/nowarnings.patch
         #scripts/config --file arch/${{ env.ARCH }}/configs/${{ env.KERNEL_CONFIG }} -d CONFIG_CC_WERROR -e CONFIG_SECTION_MISMATCH_WARN_ONLY --set-val CONFIG_FRAME_WARN 4096
 
     - name: Download source boot image
@@ -492,9 +492,9 @@ jobs:
       if: env.ENABLE_susfs4ksu == 'true'
       run: |
         cd $GITHUB_WORKSPACE/kernel_workspace/android-kernel
-        patch -p1 < $GITHUB_WORKSPACE/kernel_workspace/android-kernel/kernel_patches/patches/${{ env.Kernel_Extra_Version }}/50_add_susfs_in_kernel-${{ env.Kernel_Version }}.patch
+        patch -p2 < $GITHUB_WORKSPACE/kernel_workspace/android-kernel/kernel_patches/patches/${{ env.Kernel_Extra_Version }}/50_add_susfs_in_kernel-${{ env.Kernel_Version }}.patch
         cd $GITHUB_WORKSPACE/kernel_workspace/android-kernel/KernelSU
-        patch -p1 < $GITHUB_WORKSPACE/kernel_workspace/android-kernel/kernel_patches/patches/${{ env.Kernel_Extra_Version }}/10_enable_susfs_for_backslashxx_ksu.patch
+        patch -p2 < $GITHUB_WORKSPACE/kernel_workspace/android-kernel/kernel_patches/patches/${{ env.Kernel_Extra_Version }}/10_enable_susfs_for_backslashxx_ksu.patch
         cp $GITHUB_WORKSPACE/kernel_workspace/android-kernel/susfs4ksu/kernel_patches/fs/susfs.c $GITHUB_WORKSPACE/kernel_workspace/android-kernel/fs/
         cp $GITHUB_WORKSPACE/kernel_workspace/android-kernel/susfs4ksu/kernel_patches/include/linux/susfs.h $GITHUB_WORKSPACE/kernel_workspace/android-kernel/include/linux/
 
