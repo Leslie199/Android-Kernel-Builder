@@ -74,6 +74,20 @@ jobs:
       OUT_DIR: "${{ github.workspace }}/out"
       CCACHE_DIR: "${{ github.workspace }}/ccache"
     steps:
+      
+
+      - name: Remove unused packages
+        if: env.REMOVE_UNUSED_PACKAGES == 'true'
+        uses: jlumbroso/free-disk-space@main
+        with:
+          tool-cache: ture
+          android: false
+          dotnet: true
+          haskell: true
+          large-packages: true
+          docker-images: true
+          swap-storage: false
+
       # Set swap space
       - name: 📐 Set swap to 10G
         uses: pierotofy/set-swap-space@master
